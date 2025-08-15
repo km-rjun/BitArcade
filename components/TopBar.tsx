@@ -1,10 +1,17 @@
 "use client";
+
 import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import { BsSunFill, BsMoonFill } from "react-icons/bs";
 import "./TopBar.css";
 
-export default function TopBar({ onSearch }: { onSearch: (value: string) => void }) {
+interface TopBarProps {
+  onSearch: (value: string) => void;
+}
+
+export default function TopBar({ onSearch }: TopBarProps) {
   const [darkMode, setDarkMode] = useState(true);
+  const router = useRouter();
 
   useEffect(() => {
     const root = document.documentElement;
@@ -19,14 +26,23 @@ export default function TopBar({ onSearch }: { onSearch: (value: string) => void
 
   return (
     <div className="topbar">
-      <div className="topbar-title">BitArcade</div>
+      <div
+        className="topbar-title"
+        onClick={() => router.push("/")}
+        style={{ cursor: "pointer" }}
+      >
+        BitArcade
+      </div>
       <input
         className="topbar-search"
         type="text"
         placeholder="Search..."
         onChange={(e) => onSearch(e.target.value)}
       />
-      <button className="topbar-toggle" onClick={() => setDarkMode(!darkMode)}>
+      <button
+        className="topbar-toggle"
+        onClick={() => setDarkMode(!darkMode)}
+      >
         {darkMode ? <BsSunFill size={24} /> : <BsMoonFill size={24} />}
       </button>
     </div>
