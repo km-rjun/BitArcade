@@ -13,14 +13,17 @@
     font-size: 1.5rem;
     font-weight: bold;
     color: var(--foreground);
-    border: 2px solid var(--foreground);
+    border-top: 1px solid var(--foreground);
+    border-left: 1px solid var(--foreground);
+    border-bottom: 3px solid var(--foreground);
+    border-right: 3px solid var(--foreground);
     border-radius: 15px;
     padding: 5px 10px;
 }
 
 .topbar-search {
     width: 100%;
-    border: 2px solid var(--foreground);
+    border: 1px solid var(--foreground);
     border-radius: 8px;
     padding: 10px;
     background-color: var(--background);
@@ -29,11 +32,12 @@
 
 .topbar-toggle {
     cursor: pointer;
-    font-size: 1rem;
     color: var(--foreground);
-    padding: 15px 15px;
-    border: 2px solid var(--foreground);
+    padding: 10px 10px;
+    border-top: 1px solid var(--foreground);
+    border-left: 1px solid var(--foreground);
+    border-bottom: 3px solid var(--foreground);
+    border-right: 3px solid var(--foreground);
     border-radius: 8px;
     background-color: var(--background);
 }
-

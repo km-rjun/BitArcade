@@ -23,7 +23,7 @@ export default function TopBar() {
       <div className="topbar-title">BitArcade</div>
       <input className="topbar-search" type="text" placeholder="Search..." />
       <button className="topbar-toggle" onClick={() => setDarkMode(!darkMode)}>
-        {darkMode ? <BsSunFill /> : <BsMoonFill />}
+              {darkMode ? <BsSunFill size={24} /> : <BsMoonFill size={24} />}
       </button>
     </div>
   );
