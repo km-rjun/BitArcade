@@ -3,12 +3,11 @@ import { useState, useEffect } from "react";
 import { BsSunFill, BsMoonFill } from "react-icons/bs";
 import "./TopBar.css";
 
-export default function TopBar() {
+export default function TopBar({ onSearch }: { onSearch: (value: string) => void }) {
   const [darkMode, setDarkMode] = useState(true);
 
   useEffect(() => {
     const root = document.documentElement;
-
     if (darkMode) {
       root.style.setProperty("--background", "#0a0a0a");
       root.style.setProperty("--foreground", "#ededed");
@@ -21,11 +20,15 @@ export default function TopBar() {
   return (
     <div className="topbar">
       <div className="topbar-title">BitArcade</div>
-      <input className="topbar-search" type="text" placeholder="Search..." />
+      <input
+        className="topbar-search"
+        type="text"
+        placeholder="Search..."
+        onChange={(e) => onSearch(e.target.value)}
+      />
       <button className="topbar-toggle" onClick={() => setDarkMode(!darkMode)}>
-              {darkMode ? <BsSunFill size={24} /> : <BsMoonFill size={24} />}
+        {darkMode ? <BsSunFill size={24} /> : <BsMoonFill size={24} />}
       </button>
     </div>
   );
 }
-
