@@ -10,8 +10,14 @@ export default function Home() {
   const cards = [
     {
       title: "Rock Paper Scissor",
-      imageSrc: "/rpc.png",
-      link: "/rpc",
+      imageSrc: "/rockpaperscissors.png",
+      link: "/rockpaperscissors",
+    },
+
+    {
+      title: "Tic-Tac-Toe",
+      imageSrc: "/tictactoe.png",
+      link: "/tictactoe",
     },
   ];
 
