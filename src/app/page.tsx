@@ -1,24 +1,15 @@
 "use client";
 
 import { useState } from "react";
-import TopBar from "../../components/TopBar";
 import Cards from "../../components/Cards";
+import TopBar from "../../components/TopBar";
 
 export default function Home() {
   const [searchQuery, setSearchQuery] = useState("");
 
   const cards = [
-    {
-      title: "Rock Paper Scissor",
-      imageSrc: "/rockpaperscissors.png",
-      link: "/rockpaperscissors",
-    },
-
-    {
-      title: "Tic-Tac-Toe",
-      imageSrc: "/tictactoe.png",
-      link: "/tictactoe",
-    },
+    { title: "Rock Paper Scissor", imageSrc: "/rockpaperscissors.png", link: "/rockpaperscissors" },
+    { title: "Tic-Tac-Toe", imageSrc: "/tictactoe.png", link: "/tictactoe" },
   ];
 
   const filteredCards = cards.filter((card) =>
@@ -27,9 +18,8 @@ export default function Home() {
 
   return (
     <>
-      <TopBar onSearch={setSearchQuery} />
+      <TopBar onSearch={setSearchQuery} /> {/* search enabled here */}
       <Cards items={filteredCards} />
     </>
   );
 }
-
