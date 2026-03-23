@@ -12,8 +12,7 @@ export default function RockPaperScissors() {
   const choices: Choice[] = ["rock", "paper", "scissors"];
 
   const getCpuChoice = (): Choice => {
-    const randomIndex = Math.floor(Math.random() * 3);
-    return choices[randomIndex];
+    return choices[Math.floor(Math.random() * 3)];
   };
 
   const determineWinner = (user: Choice, cpu: Choice) => {
@@ -32,17 +31,53 @@ export default function RockPaperScissors() {
 
   const handleClick = (choice: Choice) => {
     const cpu = getCpuChoice();
-
     setUserChoice(choice);
     setCpuChoice(cpu);
     setResult(determineWinner(choice, cpu));
   };
 
   return (
-    <div style={{ textAlign: "center", padding: "2rem" }}>
-      <h1>Rock Paper Scissors</h1>
+    <div
+      style={{
+        height: "calc(100vh - 60px)", // adjust if your TopBar height differs
+        display: "flex",
+        flexDirection: "column",
+      }}
+    >
+      {/* TOP HALF → RESULTS */}
+      <div
+        style={{
+          flex: 1,
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+          textAlign: "center",
+        }}
+      >
+        <h1>Rock Paper Scissors</h1>
 
-      <div style={{ display: "flex", justifyContent: "center", gap: "1rem", marginTop: "2rem" }}>
+        {userChoice && cpuChoice ? (
+          <>
+            <p><strong>You:</strong> {userChoice}</p>
+            <p><strong>CPU:</strong> {cpuChoice}</p>
+            <h2>{result}</h2>
+          </>
+        ) : (
+          <p>Make your move</p>
+        )}
+      </div>
+
+      {/* BOTTOM HALF → BUTTONS */}
+      <div
+        style={{
+          flex: 1,
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          gap: "1rem",
+        }}
+      >
         {choices.map((choice) => (
           <button
             key={choice}
@@ -51,21 +86,13 @@ export default function RockPaperScissors() {
               padding: "1rem 2rem",
               fontSize: "1.2rem",
               cursor: "pointer",
-              borderRadius: "8px",
+              borderRadius: "10px",
             }}
           >
             {choice.toUpperCase()}
           </button>
         ))}
       </div>
-
-      {userChoice && cpuChoice && (
-        <div style={{ marginTop: "2rem" }}>
-          <p><strong>You:</strong> {userChoice}</p>
-          <p><strong>CPU:</strong> {cpuChoice}</p>
-          <h2>{result}</h2>
-        </div>
-      )}
     </div>
   );
 }
