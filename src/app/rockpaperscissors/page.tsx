@@ -39,12 +39,17 @@ export default function RockPaperScissors() {
   return (
     <div
       style={{
-        height: "calc(100vh - 60px)", // adjust if your TopBar height differs
+        height: "calc(100vh - 60px)",
         display: "flex",
         flexDirection: "column",
       }}
     >
-      {/* TOP HALF → RESULTS */}
+      {/* TOP → TITLE */}
+      <div style={{ padding: "1.5rem", textAlign: "center" }}>
+        <h1>Rock Paper Scissors</h1>
+      </div>
+
+      {/* MIDDLE → RESULTS */}
       <div
         style={{
           flex: 1,
@@ -55,8 +60,6 @@ export default function RockPaperScissors() {
           textAlign: "center",
         }}
       >
-        <h1>Rock Paper Scissors</h1>
-
         {userChoice && cpuChoice ? (
           <>
             <p><strong>You:</strong> {userChoice}</p>
@@ -68,14 +71,13 @@ export default function RockPaperScissors() {
         )}
       </div>
 
-      {/* BOTTOM HALF → BUTTONS */}
+      {/* BOTTOM → BUTTONS */}
       <div
         style={{
-          flex: 1,
           display: "flex",
           justifyContent: "center",
-          alignItems: "center",
           gap: "1rem",
+          paddingBottom: "3rem",
         }}
       >
         {choices.map((choice) => (
