@@ -45,9 +45,17 @@ export default function RockPaperScissors() {
       }}
     >
       {/* TOP → TITLE */}
-      <div style={{ padding: "1.5rem", textAlign: "center" }}>
-        <h1>Rock Paper Scissors</h1>
-      </div>
+<div style={{ padding: "1.5rem", textAlign: "center" }}>
+  <h1
+    style={{
+      fontSize: "2.5rem",
+      fontWeight: 700,
+      margin: 0,
+    }}
+  >
+    Rock Paper Scissors
+  </h1>
+</div>
 
       {/* MIDDLE → RESULTS */}
       <div
