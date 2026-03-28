@@ -70,8 +70,8 @@ export default function RockPaperScissors() {
       >
         {userChoice && cpuChoice ? (
           <>
-            <p><strong>You:</strong> {userChoice}</p>
-            <p><strong>CPU:</strong> {cpuChoice}</p>
+            <p><strong>You chose </strong> {userChoice}</p>
+            <p><strong>CPU chose</strong> {cpuChoice}</p>
             <h2>{result}</h2>
           </>
         ) : (
