@@ -106,7 +106,7 @@ export default function RockPaperScissors() {
             }}
             >
             <img
-            src={`/${choice}.png`}
+            src={`/${choice}.svg`}
             alt={choice}
             style={{
                 width: "60%",
