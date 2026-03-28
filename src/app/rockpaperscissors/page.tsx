@@ -109,8 +109,8 @@ export default function RockPaperScissors() {
             src={`/${choice}.svg`}
             alt={choice}
             style={{
-                width: "60%",
-                height: "60%",
+                width: "90%",
+                height: "90%",
                 objectFit: "contain",
             }}
             />
